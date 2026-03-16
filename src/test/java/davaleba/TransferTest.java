@@ -26,7 +26,7 @@ public class TransferTest extends BaseTest {
 
     }
     @Test
-    public void moneytransfer() throws  InterruptedException{
+    public void moneyTransfer() throws  InterruptedException{
 
         moneyTransferSteps
                 .clickAndEnterAmount("1000")
