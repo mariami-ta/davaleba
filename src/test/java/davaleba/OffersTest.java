@@ -23,25 +23,24 @@ public class OffersTest  extends BaseTest {
     }
 
     @Test
-    public void openOffers() throws InterruptedException {
+    public void openOffers() {
 
         offersPage.filterPanel.waitFor();
         offersPage.offerCardList.waitFor();
 
         Assert.assertTrue(offersPage.filterPanel.isVisible());
         Assert.assertTrue(offersPage.offerCardList.isVisible());
+
         offersSteps
                 .clickPartnerOffer()
                 .clickVisaOffer();
+
+        offersPage.noResultTitle.waitFor();
         Assert.assertTrue(offersPage.noResultTitle.isVisible());
-        offersSteps
-                .clearAllFilters();
+
+        offersSteps.clearAllFilters();
+
         offersPage.offerCardItems.first().waitFor();
-        Assert.assertTrue(offersPage.offerCardItems.count()>0);
-
-
-
-        Thread.sleep(5000);
-
+        Assert.assertTrue(offersPage.offerCardItems.count() > 0);
     }
 }
